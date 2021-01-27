@@ -6,11 +6,11 @@ import FilmCard from "../components/FilmCard";
 const filmCards = [0, 1, 2, 3, 4, 5];
 let newFilmCards = [];
 
-function renderFilms(film) {
+function renderFilms(film, props) {
   for (let i = 0; i <= film.length; i++) {
     newFilmCards = filmCards.map(FilmCard);
-    console.log(newFilmCards);
   }
+
   return newFilmCards;
 }
 const Films = () => {
