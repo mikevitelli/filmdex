@@ -3,6 +3,7 @@ import styles from "../styles/Home.module.css";
 import Login from "./login";
 import Films from "./films";
 import "bootstrap/dist/css/bootstrap.min.css";
+import SignUp from "./signup";
 
 export default function Home() {
   return (
@@ -64,27 +65,22 @@ export default function Home() {
         <div className={styles.grid}>
           <a href="/login" component={Login} className={styles.card}>
             <h3>Login &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
+            <p>Login to add more films to our database, comment, and more!</p>
           </a>
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Signup &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
+          <a href="/signup" component={SignUp} className={styles.card}>
+            <h3>Sign Up &rarr;</h3>
+            <p>Sign up for an account to become a verified user!</p>
           </a>
 
           <a href="/films" component={Films} className={styles.card}>
             <h3>Explore &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
+            <p>Discover new types of film and much more! </p>
           </a>
 
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
+          <a href="https://mikevitelli.info" className={styles.card}>
             <h3>About &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
+            <p>Learn more about FilmDex and the team behind it!</p>
           </a>
         </div>
       </main>

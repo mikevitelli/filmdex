@@ -1,5 +1,15 @@
-const Signup = () => {
-  return <>Signup</>;
+import SignUpForm from "../components/SignUpForm";
+import PageTemplate from "../components/PageTemplate";
+
+const SignUp = (props) => {
+  return (
+    <>
+      <PageTemplate>
+        <SignUpForm />
+      </PageTemplate>
+    </>
+  );
 };
 
-export default Signup;
+export default SignUp;
+//

@@ -1,4 +1,4 @@
-import { TextField, Switch } from "@material-ui/core";
+import { TextField, Switch, Button } from "@material-ui/core";
 
 const LoginForm = () => {
   return (
@@ -9,11 +9,14 @@ const LoginForm = () => {
       <br></br>
       <TextField id="outlined-basic" label="Password" variant="outlined" />
       <br></br>
+      <p>Remember Me?</p>
       <Switch
-        defaultChecked
         color="default"
         inputProps={{ "aria-label": "checkbox with default color" }}
       />
+      <br></br>
+      <br></br>
+      <Button variant="outlined">Login</Button>
     </>
   );
 };
