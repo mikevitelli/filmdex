@@ -1,12 +1,5 @@
 import styles from "../../styles/Home.module.css";
 import Image from "next/Image";
-// import filmGuy from "../../public/film_guy.png";
-
-// const myLoader = ({ src, width, quality }) => {
-//   return `https://static.wikia.nocookie.net/cartoonica/images/c/cb/${src}?w=${width}&q=${
-//     quality || 75
-//   }`;
-// };
 
 const FilmCard = () => {
   return (
