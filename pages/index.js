@@ -10,19 +10,35 @@ export default function Home() {
       <Head>
         <title>FilmDex</title>
         <link rel="icon" href="/favicon.ico" />
+
+        <script
+          src="https://unpkg.com/@material-ui/core/umd/material-ui.production.min.js"
+          crossorigin="anonymous"
+        ></script>
+
+        <script
+          src="https://unpkg.com/@material-ui/core@4.11.3/umd/material-ui.development.js"
+          crosssorigin="true"
+        ></script>
+
+        <script
+          src="https://unpkg.com/@material-ui/core@4.11.3/umd/material-ui.production.min.js"
+          crosssorigin="true"
+        ></script>
+
         <script
           src="https://unpkg.com/react/umd/react.production.min.js"
-          crossorigin
+          crosssorigin="true"
         ></script>
 
         <script
           src="https://unpkg.com/react-dom/umd/react-dom.production.min.js"
-          crossorigin
+          crosssorigin="true"
         ></script>
 
         <script
           src="https://unpkg.com/react-bootstrap@next/dist/react-bootstrap.min.js"
-          crossorigin
+          crosssorigin="true"
         ></script>
 
         <link
@@ -30,6 +46,11 @@ export default function Home() {
           href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
           integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
           crossorigin="anonymous"
+        />
+
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
         />
       </Head>
 
