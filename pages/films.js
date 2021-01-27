@@ -24,8 +24,5 @@ const Films = () => {
   );
 };
 
-// helperfunctions
-
-// map out film card
 
 export default Films;
