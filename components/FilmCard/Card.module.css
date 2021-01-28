@@ -1,0 +1,12 @@
+.card:active,
+.card:focus,
+.card:hover {
+  color: grey !important;
+}
+
+.Home_card__2SdtB:active,
+.Home_card__2SdtB:focus,
+.Home_card__2SdtB:hover {
+  color: #9f9fa0 !important;
+  border-color: #9f9fa0 !important;
+}

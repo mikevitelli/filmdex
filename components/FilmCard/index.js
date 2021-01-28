@@ -3,6 +3,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { Modal, Container, Row, Col, Button } from "react-bootstrap";
 
+import "./Card.module.css";
 // MODAL
 function FilmModal(props) {
   return (

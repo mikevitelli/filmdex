@@ -14,3 +14,10 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.Home_card__2SdtB:active,
+.Home_card__2SdtB:focus,
+.Home_card__2SdtB:hover {
+  color: #9f9fa0 !important;
+  border-color: #9f9fa0 !important;
+}
