@@ -15,12 +15,14 @@ function renderFilms(film, props) {
 }
 const Films = () => {
   return (
-    <div className={styles.container}>
-      <h1 className={styles.title}>
-        <a href="https://filmdex.app">Films</a>
-      </h1>
-      <div className={styles.grid}>{renderFilms(filmCards)}</div>
-    </div>
+    <>
+      <div className={styles.container}>
+        <h1 className={styles.title}>
+          <a href="https://filmdex.app">Films</a>
+        </h1>
+        <div className={styles.grid}>{renderFilms(filmCards)}</div>
+      </div>
+    </>
   );
 };
 
