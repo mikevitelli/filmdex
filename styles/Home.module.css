@@ -36,7 +36,7 @@
 }
 
 .title a {
-  color: #0070f3;
+  color: #636364;
   text-decoration: none;
 }
 
@@ -84,7 +84,8 @@
   margin: 1rem;
   flex-basis: 45%;
   padding: 1.5rem;
-  text-align: left;
+  justify-content: center;
+  text-align: center;
   color: inherit;
   text-decoration: none;
   border: 1px solid #eaeaea;
@@ -95,8 +96,8 @@
 .card:hover,
 .card:focus,
 .card:active {
-  color: #0070f3;
-  border-color: #0070f3;
+  color: #9f9fa0 !important;
+  border-color: #9f9fa0 !important;
 }
 
 .card h3 {

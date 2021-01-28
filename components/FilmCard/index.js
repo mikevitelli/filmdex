@@ -9,14 +9,22 @@ function FilmModal(props) {
   return (
     <Modal
       {...props}
-      size="lg"
+      size="sm"
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >
-      <Container>
+      <Container
+        style={{
+          justifyContent: "center",
+          alignItems: "center",
+          textAlign: "center",
+        }}
+      >
         <Row>
           <Col style={{ paddingTop: "15px", paddingBottom: "15px" }}>
-            <p>Hello</p>
+            <Image src="/film_guy512.png" width={200} height={200} />
+            <h3>Title</h3>
+            <h2>Description</h2>
           </Col>
         </Row>
       </Container>
