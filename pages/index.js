@@ -60,6 +60,8 @@ export default function Home() {
           Welcome to <a href="https://filmdex.app">FilmDex</a>
         </h1>
 
+        <br></br>
+
         <p className={styles.description}>The PokeDex for film!</p>
 
         <div className={styles.grid}>
