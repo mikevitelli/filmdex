@@ -46,6 +46,7 @@ const FilmCard = (props) => {
         <Image src="/film_guy512.png" width={200} height={200} />
         <h3>Title</h3>
         <h2>Description</h2>
+        <br></br>
         <Button variant="outline-secondary" onClick={() => setModalShow(true)}>
           View Film
         </Button>
