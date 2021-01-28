@@ -3,7 +3,8 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { Modal, Container, Row, Col, Button } from "react-bootstrap";
 
-function MyVerticallyCenteredFilmModal(props) {
+// MODAL
+function FilmModal(props) {
   return (
     <Modal
       {...props}
@@ -22,11 +23,12 @@ function MyVerticallyCenteredFilmModal(props) {
   );
 }
 
+// CARD
 const FilmCard = (props) => {
   const [modalShow, setModalShow] = useState(false);
   return (
     <>
-      <MyVerticallyCenteredFilmModal
+      <FilmModal
         {...props}
         show={modalShow}
         onHide={() => setModalShow(false)}
