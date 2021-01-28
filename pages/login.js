@@ -1,7 +1,7 @@
 import LoginForm from "../components/LoginForm";
 import PageTemplate from "../components/PageTemplate";
 
-const Login = (props) => {
+const Login = () => {
   return (
     <>
       <PageTemplate>
