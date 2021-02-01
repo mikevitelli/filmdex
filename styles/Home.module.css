@@ -93,6 +93,17 @@
   transition: color 0.15s ease, border-color 0.15s ease;
 }
 
+.filmContainer {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.filmCol {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
 .card:hover,
 .card:focus,
 .card:active {
