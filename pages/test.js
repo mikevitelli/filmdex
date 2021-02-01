@@ -22,6 +22,7 @@ export async function getServerSideProps() {
   const { db } = await connectToDatabase();
 
   const films = await db.collection("films").find({}).toArray();
+  console.log("worked");
 
   return {
     props: {
