@@ -1,12 +1,6 @@
 import { connectToDatabase } from "../../util/mongodb";
-export async function getServerSideProps() {
+export default async (req, res) => {
   const { db } = await connectToDatabase();
-
-  const films = await db.collection("films").find({}).toArray();
-
-  return {
-    props: {
-      films: JSON.parse(JSON.stringify(films)),
-    },
-  };
-}
+  const films = await db.collection("films").find().toArray();
+  res.json(films);
+};
