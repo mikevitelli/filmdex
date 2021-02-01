@@ -21,7 +21,7 @@ export default function Films({ films }) {
 export async function getServerSideProps() {
   const { db } = await connectToDatabase();
 
-  const films = await db.collection("films").find({}).toArray();
+  const films = await db.collection("films").find().toArray();
 
   return {
     props: {
