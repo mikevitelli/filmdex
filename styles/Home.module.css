@@ -29,6 +29,11 @@
   margin-left: 0.5rem;
 }
 
+.filmImage {
+  width: 200;
+  height: 200;
+}
+
 .footer a {
   display: flex;
   justify-content: center;

@@ -14,8 +14,8 @@ const FilmModal = (props) => {
         <Row>
           <Col className={styles.filmCol}>
             <Image src="/film_guy512.png" width={200} height={200} />
-            <h3>name</h3>
-            <h2>description</h2>
+            <h3>brand</h3>
+            <h2>name</h2>
           </Col>
         </Row>
       </Container>

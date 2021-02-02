@@ -15,8 +15,8 @@ const FilmCard = (props) => {
       />
       <a className={styles.card}>
         <Image src="/film_guy512.png" width={200} height={200} />
-        <h3>name</h3>
-        <h2>description</h2>
+        <h3>brand</h3>
+        <h2>name</h2>
         <br></br>
         <Button variant="outline-secondary" onClick={() => setModalShow(true)}>
           View Film

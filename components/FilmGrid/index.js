@@ -1,17 +1,26 @@
 import FilmCard from "../FilmCard";
 
-// need to have an array of films from the db to pass to renderFilms()
-let newFilmCards = [];
+const FilmGrid = ({ films }) => {
+  // films is equal to an array of film objects
+  // empty array to map into
+  // const { name, description, brand, iso } = films[0];
+  // console.log(name);
+  // console.log(description);
+  // console.log(brand);
+  // console.log(iso);
 
-function renderFilms(film) {
-  for (let i = 0; i <= film.length; i++) {
-    newFilmCards = film.map(FilmCard);
+  let mappedFilmCards = [];
+
+  // helper function
+  function renderFilmCards(film) {
+    // map through array of films into new array of cards
+    for (let i = 0; i <= film.length; i++) {
+      mappedFilmCards = film.map(FilmCard);
+    }
+    return mappedFilmCards;
   }
-  return newFilmCards;
-}
 
-const FilmGrid = (props) => {
-  return <>{renderFilms(props.films)}</>;
+  return <>{renderFilmCards(films)}</>;
 };
 
 export default FilmGrid;

@@ -2,6 +2,18 @@ import styles from "../styles/Home.module.css";
 import FilmGrid from "../components/FilmGrid";
 import { connectToDatabase } from "../util/mongodb";
 
+export async function getServerSideProps() {
+  const { db } = await connectToDatabase();
+
+  const films = await db.collection("films").find().toArray();
+
+  return {
+    props: {
+      films: JSON.parse(JSON.stringify(films)),
+    },
+  };
+}
+
 const Films = (props) => {
   return (
     <>
@@ -18,15 +30,3 @@ const Films = (props) => {
 };
 
 export default Films;
-
-export async function getServerSideProps() {
-  const { db } = await connectToDatabase();
-
-  const films = await db.collection("films").find().toArray();
-
-  return {
-    props: {
-      films: JSON.parse(JSON.stringify(films)),
-    },
-  };
-}
