@@ -1,17 +1,34 @@
 import styles from "../styles/Home.module.css";
-// import FilmGrid from "../components/FilmGrid";
-import { connectToDatabase } from "../util/mongodb";
 import FilmCard from "../components/FilmCard";
 
-export async function getStaticProps() {
-  const { db } = await connectToDatabase();
+// // TO USE DATABASE
+// import { connectToDatabase } from "../util/mongodb";
+// export async function getStaticProps() {
+//   const { db } = await connectToDatabase();
 
-  const films = await db.collection("films").find().toArray();
+//   const films = await db.collection("films").find().toArray();
+
+//   return {
+//     props: {
+//       films: JSON.parse(JSON.stringify(films)),
+//     },
+//   };
+// }
+
+export async function getStaticProps() {
+  const res = await fetch(`https://filmapi.vercel.app/api/films`);
+  const data = await res.json();
+
+  console.log(data);
+
+  if (!data) {
+    return {
+      notFound: true,
+    };
+  }
 
   return {
-    props: {
-      films: JSON.parse(JSON.stringify(films)),
-    },
+    props: { films: JSON.parse(JSON.stringify(data)) },
   };
 }
 
