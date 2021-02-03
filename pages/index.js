@@ -65,16 +65,6 @@ export default function Home() {
         <p className={styles.description}>The PokeDex for film!</p>
 
         <div className={styles.grid}>
-          <a href="/login" component={Login} className={styles.card}>
-            <h3>Login &rarr;</h3>
-            <p>Login to add more films to our database, comment, and more!</p>
-          </a>
-
-          <a href="/signup" component={SignUp} className={styles.card}>
-            <h3>Sign Up &rarr;</h3>
-            <p>Sign up for an account to become a verified user!</p>
-          </a>
-
           <a href="/films" component={Films} className={styles.card}>
             <h3>Explore &rarr;</h3>
             <p>Discover new types of film and much more! </p>
@@ -83,6 +73,16 @@ export default function Home() {
           <a href="https://mikevitelli.info" className={styles.card}>
             <h3>About &rarr;</h3>
             <p>Learn more about FilmDex and the team behind it!</p>
+          </a>
+
+          <a href="/login" component={Login} className={styles.card}>
+            <h3>Login &rarr;</h3>
+            <p>Login to add more films to our database, comment, and more!</p>
+          </a>
+
+          <a href="/signup" component={SignUp} className={styles.card}>
+            <h3>Sign Up &rarr;</h3>
+            <p>Sign up for an account to become a verified user!</p>
           </a>
         </div>
       </main>

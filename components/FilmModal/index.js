@@ -6,16 +6,18 @@ const FilmModal = (props) => {
   return (
     <Modal
       {...props}
-      size="sm"
+      size="lg"
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >
       <Container className={styles.filmContainer}>
         <Row>
           <Col className={styles.filmCol}>
-            <Image src="/film_guy512.png" width={200} height={200} />
-            <h3>brand</h3>
-            <h2>name</h2>
+            <Image src={props.staticImageUrl} width={200} height={200} />
+            <h4>{props.brand}</h4>
+            <h1>{props.name}</h1>
+            <p>ISO: {props.iso}</p>
+            <p>{props.description}</p>
           </Col>
         </Row>
       </Container>

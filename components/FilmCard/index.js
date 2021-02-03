@@ -6,6 +6,7 @@ import FilmModal from "../FilmModal";
 
 const FilmCard = (props) => {
   const [modalShow, setModalShow] = useState(false);
+
   return (
     <>
       <FilmModal
@@ -13,10 +14,12 @@ const FilmCard = (props) => {
         show={modalShow}
         onHide={() => setModalShow(false)}
       />
-      <a className={styles.card}>
-        <Image src="/film_guy512.png" width={200} height={200} />
-        <h3>brand</h3>
-        <h2>name</h2>
+      {/* <FilmCardTemplate {...props} /> */}
+      <a className={styles.card} id={props._id}>
+        <Image src={props.staticImageUrl} width={200} height={200} />
+        <h3>{props.brand}</h3>
+
+        <h2>{props.name}</h2>
         <br></br>
         <Button variant="outline-secondary" onClick={() => setModalShow(true)}>
           View Film

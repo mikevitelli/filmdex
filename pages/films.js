@@ -1,8 +1,9 @@
 import styles from "../styles/Home.module.css";
-import FilmGrid from "../components/FilmGrid";
+// import FilmGrid from "../components/FilmGrid";
 import { connectToDatabase } from "../util/mongodb";
+import FilmCard from "../components/FilmCard";
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const { db } = await connectToDatabase();
 
   const films = await db.collection("films").find().toArray();
@@ -14,15 +15,17 @@ export async function getServerSideProps() {
   };
 }
 
-const Films = (props) => {
+const Films = ({ films }) => {
   return (
     <>
       <div className={styles.container}>
         <h1 className={styles.title}>
-          <a href="https://filmdex.app">Films</a>
+          <a href="/">Films</a>
         </h1>
         <div className={styles.grid}>
-          <FilmGrid {...props} />
+          {films.map((film) => (
+            <FilmCard {...film} />
+          ))}
         </div>
       </div>
     </>
