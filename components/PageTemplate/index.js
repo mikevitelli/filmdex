@@ -1,15 +1,13 @@
-import { Box, Paper } from "@material-ui/core";
+import { Box } from "@material-ui/core";
 
-import styles from "../../styles/LoginStyles.module.css";
+import styles from "../../styles/Home.module.css";
 
 const PageTemplate = (props) => {
   return (
     <>
       <Box>
         <div className={styles.container}>
-          <Paper className={styles.paper} elevation={3}>
-            {props.children}
-          </Paper>
+          <a className={styles.card}>{props.children}</a>
         </div>
       </Box>
     </>

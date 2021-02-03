@@ -1,12 +1,13 @@
-import { TextField, Switch, Button } from "@material-ui/core";
+import { TextField, Button } from "@material-ui/core";
 
 const SignUpForm = () => {
   return (
     <>
       <h1>Sign Up</h1>
+      <br></br>
       <TextField id="outlined-basic" label="Username" variant="outlined" />{" "}
       <br></br>
-      <br></br>{" "}
+      <br></br>
       <TextField id="outlined-basic" label="Email" variant="outlined" />{" "}
       <br></br>
       <br></br>
