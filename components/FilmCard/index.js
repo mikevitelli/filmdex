@@ -14,7 +14,7 @@ const FilmCard = (props) => {
         show={modalShow}
         onHide={() => setModalShow(false)}
       />
-      <a className={styles.card} id={props._id}>
+      <a className={styles.card} key={props._id}>
         <Image src={props.staticImageUrl} width={200} height={200} />
         <h3>{props.brand}</h3>
 

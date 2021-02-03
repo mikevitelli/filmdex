@@ -49,11 +49,6 @@ export default function Home() {
           integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
           crossOrigin="anonymous"
         />
-        {/* 
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-        /> */}
 
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
@@ -84,7 +79,7 @@ export default function Home() {
 
           <a href="/login" component={Login} className={styles.card}>
             <h3>Login &rarr;</h3>
-            <p>Login to add more films to our database, comment, and more!</p>
+            <p>Login to contribute to our database!</p>
           </a>
 
           <a href="/signup" component={SignUp} className={styles.card}>
