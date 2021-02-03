@@ -3,7 +3,7 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import FilmCard from "../components/FilmCard";
 
-// // TO USE DATABASE
+// // TO USE DATABASE DIRECTLY
 // import { connectToDatabase } from "../util/mongodb";
 // export async function getStaticProps() {
 //   const { db } = await connectToDatabase();
@@ -20,8 +20,6 @@ import FilmCard from "../components/FilmCard";
 export async function getStaticProps() {
   const res = await fetch(`https://filmapi.vercel.app/api/films`);
   const data = await res.json();
-
-  console.log(data);
 
   if (!data) {
     return {
