@@ -14,7 +14,12 @@ const FilmModal = (props) => {
       <Container className={styles.filmContainer}>
         <Row>
           <Col className={styles.filmCol}>
-            <Image src={props.staticImageUrl} width={200} height={200} />
+            <Image
+              src={props.staticImageUrl}
+              alt={props.name}
+              width={200}
+              height={200}
+            />
             <h4>{props.brand}</h4>
             <h1>{props.name}</h1>
             <p>ISO: {props.iso}</p>

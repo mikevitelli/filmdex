@@ -1,3 +1,5 @@
+import Head from "next/head";
+
 import styles from "../styles/Home.module.css";
 import FilmCard from "../components/FilmCard";
 
@@ -35,6 +37,10 @@ export async function getStaticProps() {
 const Films = ({ films }) => {
   return (
     <>
+      <Head>
+        <title>Films</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <div className={styles.container}>
         <h1 className={styles.title}>
           <a href="/">Films</a>
