@@ -12,11 +12,6 @@
     rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
 }
 
-.canvas {
-  width: 100%;
-  height: 100vh;
-}
-
 .modalHeader {
   border-bottom: 0 none !important;
 }
