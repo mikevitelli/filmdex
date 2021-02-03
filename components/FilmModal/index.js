@@ -10,6 +10,7 @@ const FilmModal = (props) => {
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >
+      <Modal.Header className={styles.modalHeader} closeButton />
       <Container className={styles.filmContainer}>
         <Row>
           <Col className={styles.filmCol}>
