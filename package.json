@@ -28,7 +28,5 @@
   "repository": "git@github.com:mikevitelli/filmdex.git",
   "author": "Mike <mike@mikevitelli.com>",
   "license": "MIT",
-  "devDependencies": {
-    "next-transpile-modules": "6.0.0"
-  }
+  "devDependencies": {}
 }
