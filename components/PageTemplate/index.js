@@ -1,6 +1,6 @@
 import { Box, Paper } from "@material-ui/core";
 
-import styles from "./loginStyles.module.css";
+import styles from "../../styles/LoginStyles.module.css";
 
 const PageTemplate = (props) => {
   return (

@@ -10,43 +10,44 @@ export default function Home() {
     <div className={styles.container}>
       <Head>
         <title>FilmDex</title>
+
         <link rel="icon" href="/favicon.ico" />
 
         <script
           src="https://unpkg.com/@material-ui/core/umd/material-ui.production.min.js"
-          crossorigin="anonymous"
+          crossOrigin="anonymous"
         ></script>
 
         <script
           src="https://unpkg.com/@material-ui/core@4.11.3/umd/material-ui.development.js"
-          crosssorigin="true"
+          crossOrigin="true"
         ></script>
 
         <script
           src="https://unpkg.com/@material-ui/core@4.11.3/umd/material-ui.production.min.js"
-          crosssorigin="true"
+          crossOrigin="true"
         ></script>
 
         <script
           src="https://unpkg.com/react/umd/react.production.min.js"
-          crosssorigin="true"
+          crossOrigin="true"
         ></script>
 
         <script
           src="https://unpkg.com/react-dom/umd/react-dom.production.min.js"
-          crosssorigin="true"
+          crossOrigin="true"
         ></script>
 
         <script
           src="https://unpkg.com/react-bootstrap@next/dist/react-bootstrap.min.js"
-          crosssorigin="true"
+          crossOrigin="true"
         ></script>
 
         <link
           rel="stylesheet"
           href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
           integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
-          crossorigin="anonymous"
+          crossOrigin="anonymous"
         />
 
         <link
@@ -57,7 +58,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://filmdex.app">FilmDex</a>
+          Welcome to <a href="https://filmdex.app">filmDex</a>
         </h1>
 
         <br></br>
