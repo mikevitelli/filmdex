@@ -21,9 +21,9 @@ const FilmCard = (props) => {
           width={200}
           height={200}
         />
-        <h3>{props.brand}</h3>
+        <h2>{props.brand}</h2>
 
-        <h2>{props.name}</h2>
+        <h3>{props.name}</h3>
         <br></br>
         <Button variant="outline-secondary" onClick={() => setModalShow(true)}>
           View Film
