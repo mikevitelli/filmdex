@@ -6,27 +6,26 @@ import Grid from "@material-ui/core/Grid";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    margin: 100,
   },
   paper: {
-    padding: theme.spacing(4),
+    padding: theme.spacing(6),
     textAlign: "center",
     color: theme.palette.text.primary,
   },
 }));
+
 const FilmGrid = () => {
   const classes = useStyles();
 
   return (
-    <>
-      <Grid container spacing={3}>
-        <Grid item xs={3}>
-          <Paper className={classes.paper}>xs=12</Paper>
+    <div className={classes.root}>
+      <Grid container spacing={4}>
+        <Grid item xs={12} sm={12} md={6} lg={6} xl={4}>
+          <Paper className={classes.paper}>xs=12 sm=6</Paper>
         </Grid>
-        {/* <Grid item xs={12}>
-          <Paper className={classes.paper}>xs=12</Paper>
-        </Grid> */}
       </Grid>
-    </>
+    </div>
   );
 };
 

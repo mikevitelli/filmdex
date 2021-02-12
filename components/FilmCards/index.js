@@ -1,14 +1,14 @@
-import { Container, Row, Col } from "react-bootstrap";
 import FilmCard from "../FilmCard";
-
-import styles from "../../styles/Home.module.css";
+import Grid from "@material-ui/core/Grid";
 
 const FilmCards = ({ films }) => {
   return (
     <>
-      {films.map((film) => (
-        <FilmCard {...film} />
-      ))}
+      <Grid container spacing={1}>
+        {films.map((film) => (
+          <FilmCard {...film} />
+        ))}
+      </Grid>
     </>
   );
 };
