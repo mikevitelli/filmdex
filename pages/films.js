@@ -40,7 +40,7 @@ const Films = (props) => {
       </Head>
       <div className={styles.container}>
         {/* HEADER */}
-        <h1 className={styles.title} style={{ marginTop: "15px" }}>
+        <h1 className={styles.title} style={{ marginTop: "30px" }}>
           <a href="/">Films</a>
         </h1>
 
