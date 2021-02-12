@@ -7,6 +7,7 @@ const PageTemplate = (props) => {
     <>
       <Box>
         <div className={styles.container}>
+          <div className={styles.filmGrid}></div>
           <a className={styles.card}>{props.children}</a>
         </div>
       </Box>

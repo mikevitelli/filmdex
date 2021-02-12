@@ -1,8 +1,7 @@
 import Head from "next/head";
 
 import styles from "../styles/Home.module.css";
-import FilmCard from "../components/FilmCard";
-
+import FilmCards from "../components/FilmCards";
 // // TO USE DATABASE DIRECTLY
 // import { connectToDatabase } from "../util/mongodb";
 // export async function getStaticProps() {
@@ -32,7 +31,7 @@ export async function getStaticProps() {
   };
 }
 
-const Films = ({ films }) => {
+const Films = (props) => {
   return (
     <>
       <Head>
@@ -40,14 +39,14 @@ const Films = ({ films }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className={styles.container}>
+        {/* HEADER */}
         <h1 className={styles.title}>
           <a href="/">Films</a>
         </h1>
-        <div className={styles.grid}>
-          {films.map((film) => (
-            <FilmCard {...film} />
-          ))}
-        </div>
+
+        {/* GRID COMPONENT */}
+
+        <FilmCards {...props} />
       </div>
     </>
   );

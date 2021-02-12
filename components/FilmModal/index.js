@@ -11,9 +11,9 @@ const FilmModal = (props) => {
       centered
     >
       <Modal.Header className={styles.modalHeader} closeButton />
-      <Container className={styles.filmContainer}>
+      <Container className={styles.filmModalContainer}>
         <Row>
-          <Col className={styles.filmCol}>
+          <Col className={styles.filmModalCol}>
             <Image
               src={props.staticImageUrl}
               alt={props.name}
