@@ -1,1 +1,1 @@
-FilmDex is currently in development
+FilmDex is currently in development and comming soon!
