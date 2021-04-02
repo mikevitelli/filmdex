@@ -1,17 +1,33 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-import Login from "./login";
+import Login from "./auth/login";
 import Films from "./films";
 import "bootstrap/dist/css/bootstrap.min.css";
 import SignUp from "./signup";
+import Dashboard from "./dashboard";
+import { signIn, signOut, useSession } from "next-auth/client";
+import headerStyles from "../styles/Header.module.css";
+import Avatar from "@material-ui/core/Avatar";
 
 export default function Home() {
+  const [session, loading] = useSession();
+
   return (
     <div className={styles.container}>
       <Head>
         <title>FilmDex</title>
 
         <link rel="icon" href="/favicon.ico" />
+
+        <div id="fb-root"></div>
+
+        <script
+          async
+          defer
+          crossOrigin="anonymous"
+          src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v10.0"
+          nonce="AJlVc1v2"
+        ></script>
 
         <script
           src="https://unpkg.com/@material-ui/core/umd/material-ui.production.min.js"
@@ -66,26 +82,97 @@ export default function Home() {
 
         <p className={styles.description}>The PokeDex for film!</p>
 
-        <div className={styles.homeGrid}>
-          <a href="/films" component={Films} className={styles.homeCard}>
-            <h3>Explore &rarr;</h3>
-            <p>Discover new types of film and much more! </p>
-          </a>
+        <br />
 
-          <a href="https://mikevitelli.info" className={styles.homeCard}>
-            <h3>About &rarr;</h3>
-            <p>Learn more about FilmDex and the team behind it!</p>
-          </a>
-
-          <a href="/login" component={Login} className={styles.homeCard}>
-            <h3>Login &rarr;</h3>
-            <p>Login to contribute to our database!</p>
-          </a>
-
-          <a href="/signup" component={SignUp} className={styles.homeCard}>
-            <h3>Sign Up &rarr;</h3>
-            <p>Sign up for an account to become a verified user!</p>
-          </a>
+        <div className={headerStyles.signedInStatus}>
+          <p
+            className={`nojs-show ${
+              !session && loading ? headerStyles.loading : headerStyles.loaded
+            }`}
+          >
+            {!session && (
+              <>
+                <a
+                  href={`/api/auth/signin`}
+                  className={headerStyles.buttonPrimary}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    signIn();
+                  }}
+                >
+                  Sign in
+                </a>
+              </>
+            )}
+            {session && (
+              <>
+                <h3 className={headerStyles.signedInText}>
+                  <h4>Signed in as</h4> <br />
+                  <strong>{session.user.email || session.user.name}</strong>
+                  <br />
+                  <br />
+                  <br />
+                  <a
+                    href={`/api/auth/signout`}
+                    className={headerStyles.buttonPrimary}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      signOut();
+                    }}
+                  >
+                    Sign out
+                  </a>
+                  <br />
+                  <br />
+                  {/* <a
+                    href="/dashboard"
+                    component={Dashboard}
+                    className={headerStyles.button}
+                  >
+                    <h3>Dashboard &rarr;</h3>
+                  </a>
+                  <br />
+                  <a
+                    href="/films"
+                    component={Films}
+                    className={headerStyles.button}
+                  >
+                    <h3>Explore &rarr;</h3>
+                  </a> */}
+                </h3>
+              </>
+            )}
+          </p>
+        </div>
+        <div className={headerStyles.signedInStatus}>
+          {" "}
+          <p
+            className={`nojs-show ${
+              !session && loading ? headerStyles.loading : headerStyles.loaded
+            }`}
+          >
+            {session && (
+              <>
+                <h3 className={headerStyles.signedInText}>
+                  <a
+                    href="/dashboard"
+                    component={Dashboard}
+                    className={headerStyles.button}
+                  >
+                    <h3>Dashboard &rarr;</h3>
+                  </a>
+                  <br />
+                  <a
+                    href="/films"
+                    component={Films}
+                    className={headerStyles.button}
+                  >
+                    <h3>Explore &rarr;</h3>
+                  </a>
+                </h3>
+              </>
+            )}
+          </p>
         </div>
       </main>
     </div>

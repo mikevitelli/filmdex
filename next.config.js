@@ -6,6 +6,7 @@ module.exports = {
       "static.bhphoto.com",
       "assets.bigcartel.com",
       "user-images.githubusercontent.com",
+      "picsum.photos",
     ],
   },
 };

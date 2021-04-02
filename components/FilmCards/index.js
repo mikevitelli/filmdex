@@ -6,7 +6,7 @@ const FilmCards = ({ films }) => {
     <>
       <Grid container spacing={1}>
         {films.map((film) => (
-          <FilmCard {...film} />
+          <FilmCard key={film._id} {...film} />
         ))}
       </Grid>
     </>
