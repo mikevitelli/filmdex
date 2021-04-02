@@ -8,12 +8,14 @@ import Dashboard from "./dashboard";
 import { signIn, signOut, useSession } from "next-auth/client";
 import headerStyles from "../styles/Header.module.css";
 import Avatar from "@material-ui/core/Avatar";
+import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   const [session, loading] = useSession();
 
   return (
-    <div className={styles.container}>
+    <>
       <Head>
         <title>FilmDex</title>
 
@@ -73,108 +75,123 @@ export default function Home() {
         />
       </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://filmdex.app">filmDex</a>
-        </h1>
-
-        <br></br>
-
-        <p className={styles.description}>The PokeDex for film!</p>
-
-        <br />
-
-        <div className={headerStyles.signedInStatus}>
-          <p
+      <div className={styles.container}>
+        <div className={headerStyles.navContainer}>
+          <div
             className={`nojs-show ${
               !session && loading ? headerStyles.loading : headerStyles.loaded
             }`}
           >
-            {!session && (
-              <>
-                <a
-                  href={`/api/auth/signin`}
-                  className={headerStyles.buttonPrimary}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    signIn();
-                  }}
-                >
-                  Sign in
-                </a>
-              </>
-            )}
             {session && (
-              <>
-                <h3 className={headerStyles.signedInText}>
-                  <h4>Signed in as</h4> <br />
-                  <strong>{session.user.email || session.user.name}</strong>
-                  <br />
-                  <br />
-                  <br />
-                  <a
-                    href={`/api/auth/signout`}
-                    className={headerStyles.buttonPrimary}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      signOut();
+              <nav className={headerStyles.nav}>
+                <ul className={headerStyles.headerUl}>
+                  <li className={headerStyles.headerLi}>
+                    <h4>Signed in as</h4>{" "}
+                  </li>
+                  <li
+                    style={{
+                      marginLeft: "50px",
+                      marginRight: "50px",
+                    }}
+                    className={headerStyles.headerLi}
+                  >
+                    <strong>{session.user.email || session.user.name}</strong>
+                  </li>
+
+                  <li
+                    className={headerStyles.headerLi}
+                    style={{
+                      marginRight: "50px",
                     }}
                   >
-                    Sign out
-                  </a>
+                    {session.user.image && (
+                      <Image
+                        className={headerStyles.image}
+                        width={"50px"}
+                        height={"50px"}
+                        src={session.user.image}
+                        eager
+                      />
+                    )}
+                  </li>
+
+                  <li className={headerStyles.headerLi}>
+                    <a
+                      href={`/api/auth/signout`}
+                      className={headerStyles.buttonSignOut}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        signOut();
+                      }}
+                    >
+                      Sign out
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            )}
+          </div>
+        </div>
+
+        {/* Lower portion */}
+        <div
+          className={`nojs-show ${
+            !session && loading ? headerStyles.loading : headerStyles.loaded
+          }`}
+        >
+          <div className={styles.container}>
+            {!session && (
+              <>
+                <div className={styles.container}>
+                  <h1 className={styles.title}>
+                    Welcome to <a href="https://filmdex.app">filmDex</a>
+                  </h1>
+
                   <br />
+
+                  <p className={styles.description}>The PokeDex for film!</p>
+
                   <br />
-                  {/* <a
-                    href="/dashboard"
-                    component={Dashboard}
-                    className={headerStyles.button}
-                  >
-                    <h3>Dashboard &rarr;</h3>
-                  </a>
+
                   <br />
+
                   <a
-                    href="/films"
-                    component={Films}
-                    className={headerStyles.button}
+                    href={`/api/auth/signin`}
+                    className={headerStyles.buttonSignIn}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      signIn();
+                    }}
                   >
-                    <h3>Explore &rarr;</h3>
-                  </a> */}
-                </h3>
+                    Sign in
+                  </a>
+                </div>
               </>
             )}
-          </p>
-        </div>
-        <div className={headerStyles.signedInStatus}>
-          {" "}
-          <p
-            className={`nojs-show ${
-              !session && loading ? headerStyles.loading : headerStyles.loaded
-            }`}
-          >
             {session && (
               <>
-                <h3 className={headerStyles.signedInText}>
-                  <a
-                    href="/dashboard"
-                    component={Dashboard}
-                    className={headerStyles.button}
-                  >
-                    <h3>Dashboard &rarr;</h3>
-                  </a>
+                <Link href="/">
+                  <a className={headerStyles.title}>filmDex</a>
+                </Link>
+
+                <div className={headerStyles.navContainer}>
+                  <div className={headerStyles.linkContainer}>
+                    <Link href="/dashboard">
+                      <a className={headerStyles.link}>Dashboard &rarr;</a>
+                    </Link>
+                  </div>
                   <br />
-                  <a
-                    href="/films"
-                    component={Films}
-                    className={headerStyles.button}
-                  >
-                    <h3>Explore &rarr;</h3>
-                  </a>
-                </h3>
+                  <div className={headerStyles.linkContainer}>
+                    <Link href="/films">
+                      <a className={headerStyles.link}>Explore &rarr;</a>
+                    </Link>
+                  </div>
+                </div>
               </>
             )}
-          </p>
+          </div>
         </div>
-      </main>
-    </div>
+      </div>
+    </>
   );
 }

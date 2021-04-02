@@ -7,6 +7,7 @@ module.exports = {
       "assets.bigcartel.com",
       "user-images.githubusercontent.com",
       "picsum.photos",
+      "lh3.googleusercontent.com",
     ],
   },
 };
