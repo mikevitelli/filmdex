@@ -1,6 +1,5 @@
 import Head from "next/head";
 
-import styles from "../styles/Home.module.css";
 import FilmCards from "../components/FilmCards";
 import SearchBar from "material-ui-search-bar";
 // // TO USE DATABASE DIRECTLY
@@ -32,8 +31,6 @@ export async function getStaticProps() {
   };
 }
 
-[];
-
 const Films = (props) => {
   return (
     <>
@@ -41,20 +38,17 @@ const Films = (props) => {
         <title>Films</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className={styles.container}>
+      <div>
         {/* HEADER */}
-        <h1
-          className={styles.title}
-          style={{ marginTop: "30px", marginBottom: "30px" }}
-        >
+        <h1>
           <a href="/">Films</a>
         </h1>
-        <SearchBar
-          className={styles.searchBar}
-          // value={state.value}
-          // onChange={(newValue) => setState({ value: newValue })}
-          // onRequestSearch={() => doSomethingWith(state.value)}
-        />
+        {/* <SearchBar
+
+        // value={state.value}
+        // onChange={(newValue) => setState({ value: newValue })}
+        // onRequestSearch={() => doSomethingWith(state.value)}
+        /> */}
         {/* GRID COMPONENT */}
         <FilmCards {...props} />
       </div>

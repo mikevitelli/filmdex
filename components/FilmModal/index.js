@@ -1,6 +1,6 @@
 import { Modal, Container, Row, Col } from "react-bootstrap";
 import Image from "next/image";
-import styles from "../../styles/Home.module.css";
+// import styles from "../../styles/Home.module.css";
 
 const FilmModal = (props) => {
   return (
@@ -10,10 +10,10 @@ const FilmModal = (props) => {
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >
-      <Modal.Header className={styles.modalHeader} closeButton />
-      <Container className={styles.filmModalContainer}>
+      <Modal.Header closeButton />
+      <Container>
         <Row>
-          <Col className={styles.filmModalCol}>
+          <Col>
             <Image
               src={props.staticImageUrl}
               alt={props.name}

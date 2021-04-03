@@ -6,7 +6,7 @@ import {
   Divider,
   Typography,
 } from "@material-ui/core";
-import styles from "../../styles/Home.module.css";
+// import styles from "../../styles/Home.module.css";
 
 import GoogleButton from "react-google-button";
 import { provider, signIn } from "next-auth/client";
@@ -57,7 +57,7 @@ const LoginForm = (props) => {
       <br />
       <GoogleButton
         type="light"
-        className={styles.googleBttn}
+        // className={styles.googleBttn}
         style={{ marginLeft: "7px" }}
         onClick={() => signIn()}
       />

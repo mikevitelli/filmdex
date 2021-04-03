@@ -1,9 +1,13 @@
+// import "../styles/globals.css";
 import "../styles/globals.css";
+
+import "../styles/tailwind.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
 import PropTypes from "prop-types";
 import Head from "next/head";
 import { Provider } from "next-auth/client";
+import "tailwindcss/tailwind.css";
 
 export default function MyApp({ Component, pageProps }) {
   React.useEffect(() => {

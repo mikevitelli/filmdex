@@ -21,16 +21,6 @@ export default function Home() {
 
         <link rel="icon" href="/favicon.ico" />
 
-        <div id="fb-root"></div>
-
-        <script
-          async
-          defer
-          crossOrigin="anonymous"
-          src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v10.0"
-          nonce="AJlVc1v2"
-        ></script>
-
         <script
           src="https://unpkg.com/@material-ui/core/umd/material-ui.production.min.js"
           crossOrigin="anonymous"
@@ -67,131 +57,77 @@ export default function Home() {
           integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
           crossOrigin="anonymous"
         />
-
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&display=swap"
-          rel="stylesheet"
-        />
       </Head>
 
-      <div className={styles.container}>
-        <div className={headerStyles.navContainer}>
-          <div
-            className={`nojs-show ${
-              !session && loading ? headerStyles.loading : headerStyles.loaded
-            }`}
-          >
-            {session && (
-              <nav className={headerStyles.nav}>
-                <ul className={headerStyles.headerUl}>
-                  <li className={headerStyles.headerLi}>
-                    <h4>Signed in as</h4>{" "}
-                  </li>
-                  <li
-                    style={{
-                      marginLeft: "50px",
-                      marginRight: "50px",
-                    }}
-                    className={headerStyles.headerLi}
-                  >
-                    <strong>{session.user.email || session.user.name}</strong>
-                  </li>
-
-                  <li
-                    className={headerStyles.headerLi}
-                    style={{
-                      marginRight: "50px",
-                    }}
-                  >
-                    {session.user.image && (
-                      <Image
-                        className={headerStyles.image}
-                        width={"50px"}
-                        height={"50px"}
-                        src={session.user.image}
-                        eager
-                      />
-                    )}
-                  </li>
-
-                  <li className={headerStyles.headerLi}>
-                    <a
-                      href={`/api/auth/signout`}
-                      className={headerStyles.buttonSignOut}
-                      onClick={(e) => {
-                        e.preventDefault();
-                        signOut();
-                      }}
-                    >
-                      Sign out
-                    </a>
-                  </li>
-                </ul>
-              </nav>
-            )}
+      {session && (
+        <nav>
+          <div className="flex p-10 justify-left">
+            <img
+              className="h-24 w-24 rounded-full mx-0 mr-5"
+              src={session.user.image}
+            />
+            <div className="text-center md:text-left">
+              <h2 className="text-lg">Signed in as</h2>
+              <h2 className="text-lg font-bold">
+                {session.user.email || session.user.name}
+              </h2>
+              <a
+                href={`/api/auth/signout`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  signOut();
+                }}
+              >
+                Sign out
+              </a>
+            </div>
           </div>
-        </div>
+        </nav>
+      )}
 
-        {/* Lower portion */}
-        <div
-          className={`nojs-show ${
-            !session && loading ? headerStyles.loading : headerStyles.loaded
-          }`}
-        >
-          <div className={styles.container}>
-            {!session && (
-              <>
-                <div className={styles.container}>
-                  <h1 className={styles.title}>
-                    Welcome to <a href="https://filmdex.app">filmDex</a>
-                  </h1>
+      {/* Lower portion */}
 
-                  <br />
+      {!session && (
+        <>
+          <div className="text-center md:text-left">
+            <h1>
+              Welcome to <a href="https://filmdex.app">filmDex</a>
+            </h1>
 
-                  <p className={styles.description}>The PokeDex for film!</p>
+            <br />
 
-                  <br />
+            <p>The PokeDex for film!</p>
 
-                  <br />
+            <br />
 
-                  <a
-                    href={`/api/auth/signin`}
-                    className={headerStyles.buttonSignIn}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      signIn();
-                    }}
-                  >
-                    Sign in
-                  </a>
-                </div>
-              </>
-            )}
-            {session && (
-              <>
-                <Link href="/">
-                  <a className={headerStyles.title}>filmDex</a>
-                </Link>
+            <br />
 
-                <div className={headerStyles.navContainer}>
-                  <div className={headerStyles.linkContainer}>
-                    <Link href="/dashboard">
-                      <a className={headerStyles.link}>Dashboard &rarr;</a>
-                    </Link>
-                  </div>
-                  <br />
-                  <div className={headerStyles.linkContainer}>
-                    <Link href="/films">
-                      <a className={headerStyles.link}>Explore &rarr;</a>
-                    </Link>
-                  </div>
-                </div>
-              </>
-            )}
+            <a
+              href={`/api/auth/signin`}
+              onClick={(e) => {
+                e.preventDefault();
+                signIn();
+              }}
+            >
+              Sign in
+            </a>
           </div>
-        </div>
-      </div>
+        </>
+      )}
+
+      {session && (
+        <>
+          <div className="text-center">
+            <Link href="/dashboard">
+              <a className="text-gray-600">Dashboard &rarr;</a>
+            </Link>
+            <br />
+            <Link href="/films">
+              <a className="text-gray-600">Explore &rarr;</a>
+            </Link>
+          </div>
+        </>
+      )}
     </>
   );
 }

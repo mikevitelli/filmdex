@@ -1,6 +1,6 @@
 import LoginForm from "../../components/LoginForm";
 import PageTemplate from "../../components/PageTemplate";
-import styles from "../../styles/Home.module.css";
+// import styles from "../../styles/Home.module.css";
 
 // import { providers } from "next-auth/client";
 
@@ -16,7 +16,7 @@ const Login = (props) => {
   return (
     <>
       <PageTemplate>
-        <h1 className={styles.title}>
+        <h1>
           <a href="https://filmdex.app">filmDex</a>
         </h1>
         <br />
