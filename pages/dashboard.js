@@ -1,61 +1,7 @@
-import React, { useState, useEffect } from "react";
-import Paper from "@material-ui/core/Paper";
-import Grid from "@material-ui/core/Grid";
+import React, { useState } from "react";
 import { useSession } from "next-auth/client";
 import Home from "./index";
-
-// const useStyles = makeStyles((theme) => ({
-//   container: {
-//     display: "grid",
-//     gridTemplateColumns: "repeat(12, 1fr)",
-//     gridGap: theme.spacing(3),
-//   },
-//   paper: {
-//     padding: theme.spacing(1),
-//     textAlign: "center",
-//     color: theme.palette.text.secondary,
-//     whiteSpace: "nowrap",
-//     marginBottom: theme.spacing(1),
-//   },
-//   galleryTile: {
-//     padding: theme.spacing(1),
-//     textAlign: "center",
-//     color: theme.palette.text.secondary,
-//     whiteSpace: "nowrap",
-//     marginBottom: theme.spacing(8),
-//     height: "30vh",
-//     justifyContent: "center",
-//   },
-//   panel: {
-//     padding: theme.spacing(1),
-//     textAlign: "center",
-//     color: theme.palette.text.secondary,
-//     whiteSpace: "nowrap",
-//     marginBottom: theme.spacing(1),
-//     height: "60vh",
-//     margin: "5%",
-//   },
-//   userPanel: {
-//     padding: theme.spacing(1),
-//     textAlign: "center",
-//     color: theme.palette.text.secondary,
-//     whiteSpace: "nowrap",
-//     marginBottom: theme.spacing(8),
-//     height: "20vh",
-//     margin: "5%",
-//   },
-//   userPanelGrid: {},
-//   filmGalleryCard: {
-//     margin: "5%",
-//     padding: "2rem",
-//     justifyContent: "center",
-//     textAlign: "center",
-//     color: "inherit",
-//     textDecoration: "none",
-//     borderRadius: "10px",
-//   },
-//   title: { justifyContent: "center" },
-// }));
+import Navbar from "../components/Navbar";
 
 export async function getStaticProps() {
   const res = await fetch(`https://filmapi.vercel.app/api/films`);
@@ -77,17 +23,17 @@ export default function Dashboard({ films }) {
   const [session, loading] = useSession();
   const [content, setContent] = useState();
 
-  // Fetch content from protected route
-  useEffect(() => {
-    const fetchData = async () => {
-      const res = await fetch("/api/userData");
-      const json = await res.json();
-      if (json.content) {
-        setContent(json.content);
-      }
-    };
-    fetchData();
-  }, [session]);
+  // // Fetch content from protected route
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const res = await fetch("/api/userData");
+  //     const json = await res.json();
+  //     if (json.content) {
+  //       setContent(json.content);
+  //     }
+  //   };
+  //   fetchData();
+  // }, [session]);
 
   // When rendering client side don't display anything until loading is complete
   if (typeof window !== "undefined" && loading) return null;
@@ -112,27 +58,25 @@ export default function Dashboard({ films }) {
 
   return (
     <>
-      <Grid container spacing={3}>
-        <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
-          <Paper>
-            <h3>User Image Area</h3>
-            <h3>{content}</h3>
-          </Paper>
-          <Paper>
-            <h3>User Information Panel</h3>
-          </Paper>
-        </Grid>
-        <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
-          {films.map((film, x) => (
-            <Paper key={film._id} {...film}>
-              <h3>Film Gallery Tile #{x + 1}</h3>
-              <h4>{film.name}</h4>
-              <h4>{film.brand}</h4>
-              <h4>Created at: {getTimestamp(new Date())}</h4>
-            </Paper>
-          ))}
-        </Grid>
-      </Grid>
+      <Navbar />
+      <div className="grid grid-col-1">
+        <div className="flex-1">
+          <h3>User Image Area</h3>
+        </div>
+        <div className="flex-1">
+          <h3>User Information Area</h3>
+        </div>
+      </div>
+      <div className="grid grid-col-1">
+        {films.map((film, x) => (
+          <div key={film._id} {...film}>
+            <h3>Film Gallery Tile #{x + 1}</h3>
+            <h4>{film.name}</h4>
+            <h4>{film.brand}</h4>
+            <h4>Created at: {getTimestamp(new Date())}</h4>
+          </div>
+        ))}
+      </div>
     </>
   );
 }

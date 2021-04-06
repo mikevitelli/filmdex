@@ -1,17 +1,13 @@
-// import styles from "../../styles/Home.module.css";
 import Image from "next/image";
 import React, { useState } from "react";
-import { Button } from "react-bootstrap";
 import FilmModal from "../FilmModal";
-import Grid from "@material-ui/core/Grid";
-// import { makeStyles } from "@material-ui/core/styles";
 
 const FilmCard = (props) => {
   const [modalShow, setModalShow] = useState(false);
 
   return (
     <>
-      <Grid item xs={12} sm={12} md={6} lg={6} xl={4}>
+      <div>
         <div>
           <FilmModal
             {...props}
@@ -31,15 +27,15 @@ const FilmCard = (props) => {
               <h3>{props.name}</h3>
             </div>
             <br></br>
-            <Button
+            <button
               variant="outline-secondary"
               onClick={() => setModalShow(true)}
             >
               View Film
-            </Button>
+            </button>
           </a>
         </div>
-      </Grid>
+      </div>
     </>
   );
 };
