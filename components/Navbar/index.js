@@ -32,11 +32,13 @@ export const Links = () => {
 };
 
 const Navbar = () => {
-  const [session, loading] = useSession();
+  const [session] = useSession();
 
-  const image = session.user.image;
-  const email = session.user.email;
-  const username = session.user.name;
+  const [image, email, username] = [
+    session.user.image,
+    session.user.email,
+    session.user.name,
+  ];
 
   return (
     <>
@@ -48,9 +50,7 @@ const Navbar = () => {
 
           <div className="text-lg text-right col-start-5">
             Signed in as
-            <div className="text-lg font-bold ">
-              {email.substring(0, 20) || username}
-            </div>
+            <div className="text-lg font-bold ">{username}</div>
             <a
               href={`/api/auth/signout`}
               onClick={(e) => {

@@ -7,10 +7,13 @@ const Welcome = () => {
     <>
       <div className="containter mx-auto my-80 align-middle text-center">
         <div
-          className="text-5xl font-bold font-sans
-      mb-5"
+          className="text-5xl font-sans
+      mb-5 "
         >
-          Welcome to <a href="/">filmDex</a>
+          Welcome to{" "}
+          <div className="text-gray-600">
+            <a href="/">filmDex</a>
+          </div>{" "}
         </div>
         <button
           className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow mx-5"
