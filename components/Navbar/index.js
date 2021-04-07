@@ -15,11 +15,11 @@ export const Links = () => {
           <a>home</a>
         </Link>{" "}
         /{" "}
-        <Link href="/auth/logs">
+        <Link href="/auth/films">
           <a>films</a>
         </Link>{" "}
         /{" "}
-        <Link href="/">
+        <Link href="/auth/bookmarks">
           <a>bookmarks</a>
         </Link>{" "}
         /{" "}
@@ -48,7 +48,9 @@ const Navbar = () => {
 
           <div className="text-lg text-right col-start-5">
             Signed in as
-            <div className="text-lg font-bold">{email || username}</div>
+            <div className="text-lg font-bold ">
+              {email.substring(0, 20) || username}
+            </div>
             <a
               href={`/api/auth/signout`}
               onClick={(e) => {
@@ -60,7 +62,7 @@ const Navbar = () => {
             </a>
           </div>
         </div>
-        <div className="mt-4">
+        <div className="mt-4 text-lg font-sans font-bold">
           <Links />
         </div>
       </header>
