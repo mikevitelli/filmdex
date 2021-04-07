@@ -23,7 +23,7 @@ export const Links = () => {
           <a>bookmarks</a>
         </Link>{" "}
         /{" "}
-        <Link href="/">
+        <Link href="/auth/logs">
           <a>logs</a>
         </Link>
       </div>
