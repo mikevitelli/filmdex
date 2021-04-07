@@ -30,13 +30,7 @@ export default function Home() {
       {/* Upper Portion */}
 
       {/* Lower portion */}
-      {!session && (
-        <div className="containter mx-auto">
-          <div className="h-screen w-screen ">
-            <Welcome />
-          </div>
-        </div>
-      )}
+      {!session && <Welcome />}
 
       {/* {session && <Navbar />} */}
 

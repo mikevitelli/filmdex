@@ -14,21 +14,17 @@ export const Links = () => {
         <Link href="/">
           <a>home</a>
         </Link>{" "}
-        //{" "}
-        <Link href="/dashboard">
-          <a>dashboard</a>
+        /{" "}
+        <Link href="/auth/logs">
+          <a>films</a>
         </Link>{" "}
-        //{" "}
+        /{" "}
         <Link href="/">
           <a>bookmarks</a>
         </Link>{" "}
-        //{" "}
+        /{" "}
         <Link href="/">
           <a>logs</a>
-        </Link>{" "}
-        //{" "}
-        <Link href="/auth/logs">
-          <a>films</a>
         </Link>
       </div>
     </>
