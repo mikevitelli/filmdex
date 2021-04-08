@@ -103,11 +103,9 @@ export default NextAuth({
     // async signIn(user, account, profile) {
     //   return true;
     // },
-    // async redirect(url, baseUrl) {
-    //   console.log(url);
-    //   baseUrl = "https://filmdex.app";
-    //   return baseUrl;
-    // },
+    async redirect(url, baseUrl) {
+      return url.startsWith(baseUrl) ? url : baseUrl;
+    },
     // async session(session, user) {
     //   return session;
     // },
