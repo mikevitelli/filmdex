@@ -103,9 +103,9 @@ export default NextAuth({
     // async signIn(user, account, profile) {
     //   return true;
     // },
-    async redirect(url, baseUrl) {
-      return url.startsWith(baseUrl) ? url : baseUrl;
-    },
+    // async redirect(url, baseUrl) {
+    //   return url.startsWith(baseUrl) ? url : baseUrl;
+    // },
     // async session(session, user) {
     //   return session;
     // },
