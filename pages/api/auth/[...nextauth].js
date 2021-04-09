@@ -44,7 +44,7 @@ export default NextAuth({
   // Database optional. MySQL, Maria DB, Postgres and MongoDB are supported.
   // https://next-auth.js.org/configuration/databases
   //
-  // Notes:
+  // Notes::
   // * You must to install an appropriate node_module for your database
   // * The Email provider requires a database (OAuth providers do not)
   database: process.env.DATABASE_URL,
