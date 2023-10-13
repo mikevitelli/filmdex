@@ -1,4 +1,4 @@
-require("dotenv").config();
+
 
 module.exports = {
   future: {
@@ -15,3 +15,5 @@ module.exports = {
     ],
   },
 };
+
+

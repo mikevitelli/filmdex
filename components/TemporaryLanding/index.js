@@ -1,8 +1,7 @@
-import { signIn, signOut, useSession } from "next-auth/client";
+import { signIn, signOut, useSession } from "next-auth/react";
 
 const Welcome = () => {
-  const [session, loading] = useSession();
-
+  const { data: session } = useSession();
   return (
     <>
       <div className="containter mx-auto my-80 align-middle text-center">

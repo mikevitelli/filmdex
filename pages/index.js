@@ -1,12 +1,13 @@
 import Head from "next/head";
-import { useSession } from "next-auth/client";
-import Navbar from "../components/Navbar";
+import { useSession } from "next-auth/react";
+// import Navbar from "../components/Navbar";
 import Welcome from "../components/TemporaryLanding";
-import Link from "next/link";
+// import Link from "next/link";
 import Image from "next/image";
 import Layout from "../components/Layout";
 export default function Home() {
-  const [session, loading] = useSession();
+  // const [session, loading] = useSession();
+  const { data: session } = useSession();
 
   // if !session display <Welcome /> else display landing page
 

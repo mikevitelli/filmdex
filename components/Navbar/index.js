@@ -1,7 +1,7 @@
-import { signOut, useSession } from "next-auth/client";
+import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 
-export const Links = () => {
+const Links = () => {
   let pages = [];
   pages = [
     { href: "/dashboard", title: "dash" },
@@ -31,15 +31,34 @@ export const Links = () => {
   );
 };
 
+
+
+
+// import { useSession } from "next-auth/react"
+
+// export default function Component() {
+//   const { data: session, status } = useSession()
+
+//   if (status === "authenticated") {
+//     return <p>Signed in as {session.user.email}</p>
+//   }
+
+//   return <a href="/api/auth/signin">Sign in</a>
+// }
+
 const Navbar = () => {
-  const [session] = useSession();
+  const { data: session, status } = useSession()
 
-  const [image, email, username] = [
-    session.user.image,
-    session.user.email,
-    session.user.name,
-  ];
 
+
+  if (status === "authenticated") {
+    const [image, email, username] = [
+      session.user.image,
+      // session.user.email,
+      session.user.name,
+    ];
+     
+  
   return (
     <>
       <header className="flex flex-col pt-5 px-10 pb-5 flex-wrap">
@@ -69,5 +88,6 @@ const Navbar = () => {
     </>
   );
 };
+}
 
 export default Navbar;

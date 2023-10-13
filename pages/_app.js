@@ -2,11 +2,11 @@ import "../styles/tailwind.css";
 import React from "react";
 import PropTypes from "prop-types";
 import Head from "next/head";
-import { Provider } from "next-auth/client";
+import { SessionProvider } from "next-auth/react";
 import "tailwindcss/tailwind.css";
 
 export default function MyApp({ Component, pageProps }) {
-  // material ui
+  // material u
   // React.useEffect(() => {
   //   // Remove the server-side injected CSS.
   //   const jssStyles = document.querySelector("#jss-server-side");
@@ -17,7 +17,7 @@ export default function MyApp({ Component, pageProps }) {
 
   return (
     <>
-      <Provider
+      <SessionProvider
         // Provider options are not required but can be useful in situations where
         // you have a short session maxAge time. Shown here with default values.
         options={{
@@ -49,7 +49,7 @@ export default function MyApp({ Component, pageProps }) {
           ></script>
         </Head>
         <Component {...pageProps} />
-      </Provider>
+      </SessionProvider>
     </>
   );
 }
