@@ -1,8 +1,12 @@
 
 
 module.exports = {
-  future: {
-    webpack5: true,
+  // future: {
+  //   webpack5: true,
+  // },
+
+  experimental: {
+    largePageDataBytes: 168 * 100000,
   },
 
   images: {
@@ -15,5 +19,3 @@ module.exports = {
     ],
   },
 };
-
-

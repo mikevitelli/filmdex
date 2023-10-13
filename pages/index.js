@@ -3,6 +3,7 @@ import { useSession } from "next-auth/react";
 // import Navbar from "../components/Navbar";
 import Welcome from "../components/TemporaryLanding";
 // import Link from "next/link";
+import Script from "next/script";
 import Image from "next/image";
 import Layout from "../components/Layout";
 export default function Home() {
@@ -15,15 +16,15 @@ export default function Home() {
 
         <link rel="icon" href="/favicon.ico" />
 
-        <script
+        <Script
           src="https://unpkg.com/react/umd/react.production.min.js"
           crossOrigin="true"
-        ></script>
+        ></Script>
 
-        <script
+        <Script
           src="https://unpkg.com/react-dom/umd/react-dom.production.min.js"
           crossOrigin="true"
-        ></script>
+        ></Script>
       </Head>
 
       {!session && <Welcome />}
