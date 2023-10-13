@@ -6,10 +6,7 @@ import Welcome from "../components/TemporaryLanding";
 import Image from "next/image";
 import Layout from "../components/Layout";
 export default function Home() {
-  // const [session, loading] = useSession();
   const { data: session } = useSession();
-
-  // if !session display <Welcome /> else display landing page
 
   return (
     <>
