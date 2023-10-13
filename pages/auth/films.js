@@ -1,4 +1,4 @@
-import { useSession } from "next-auth/client";
+import { useSession } from "next-auth/react";
 import Welcome from "../../components/TemporaryLanding";
 import Films from "../../components/Films";
 import Layout from "../../components/Layout";
@@ -19,26 +19,43 @@ export async function getStaticProps() {
 }
 
 const FilmsPage = (props) => {
-  const [session, loading] = useSession();
+  const { data: session, status } = useSession()
 
-  function displayAuthenticatedContent(session) {
-    if (session) {
-      return (
-        <>
-          <Layout>
-            <Films {...props} />
-          </Layout>
-        </>
-      );
-    } else {
-      return (
-        <>
-          <Welcome />
-        </>
-      );
-    }
+  if (status === 'authenticated'){
+    return(
+      <>
+        <Layout>
+          <Films {...props} />
+        </Layout>
+      </>
+    )
   }
-  return <>{displayAuthenticatedContent(session)}</>;
-};
+  return(
+    <>
+    <Welcome />
+  </>
+  )
+}
+
+
+//   function displayAuthenticatedContent(session) {
+//     if (session) {
+//       return (
+//         <>
+//           <Layout>
+//             <Films {...props} />
+//           </Layout>
+//         </>
+//       );
+//     } else {
+//       return (
+//         <>
+//           <Welcome />
+//         </>
+//       );
+//     }
+//   }
+//   return <>{displayAuthenticatedContent(session)}</>;
+// };
 
 export default FilmsPage;

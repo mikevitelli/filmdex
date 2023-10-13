@@ -8,27 +8,25 @@ const Links = () => {
     { href: "/bookmarks", title: "bookmarks" },
     { href: "/", title: "home" },
   ];
-  return (
-    <>
-      <div className="mr-4 text-center lg:text-left">
-        <Link href="/">
-          <a>home</a>
-        </Link>{" "}
-        /{" "}
-        <Link href="/auth/films">
-          <a>films</a>
-        </Link>{" "}
-        /{" "}
-        <Link href="/auth/bookmarks">
-          <a>bookmarks</a>
-        </Link>{" "}
-        /{" "}
-        <Link href="/auth/logs">
-          <a>logs</a>
-        </Link>
-      </div>
-    </>
-  );
+  return <>
+    <div className="mr-4 text-center lg:text-left">
+      <Link href="/">
+        home
+      </Link>{" "}
+      /{" "}
+      <Link href="/auth/films">
+        films
+      </Link>{" "}
+      /{" "}
+      <Link href="/auth/bookmarks">
+        bookmarks
+      </Link>{" "}
+      /{" "}
+      <Link href="/auth/logs">
+        logs
+      </Link>
+    </div>
+  </>;
 };
 
 
