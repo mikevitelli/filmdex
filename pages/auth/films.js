@@ -37,25 +37,4 @@ const FilmsPage = (props) => {
   )
 }
 
-
-//   function displayAuthenticatedContent(session) {
-//     if (session) {
-//       return (
-//         <>
-//           <Layout>
-//             <Films {...props} />
-//           </Layout>
-//         </>
-//       );
-//     } else {
-//       return (
-//         <>
-//           <Welcome />
-//         </>
-//       );
-//     }
-//   }
-//   return <>{displayAuthenticatedContent(session)}</>;
-// };
-
 export default FilmsPage;

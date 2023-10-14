@@ -9,7 +9,7 @@ const Welcome = () => {
           className="text-5xl font-sans
       mb-5 "
         >
-          Welcome to{" "}
+          {/* Welcome to{" "} */}
           <div className="text-gray-600">
             <a href="/">filmDex</a>
           </div>{" "}
