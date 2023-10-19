@@ -47,3 +47,17 @@ This project is licensed under the [MIT License](LICENSE).
 If you have any questions or feedback, please feel free to reach out at [hello@filmdex.app](mailto:hello@filmdex.app).
 
 Happy film shooting! 📷🎞
+
+```
+8888888888 d8b 888               8888888b.                    
+888        Y8P 888               888  "Y88b                   
+888            888               888    888                   
+8888888    888 888 88888b.d88b.  888    888  .d88b.  888  888 
+888        888 888 888 "888 "88b 888    888 d8P  Y8b `Y8bd8P' 
+888        888 888 888  888  888 888    888 88888888   X88K   
+888        888 888 888  888  888 888  .d88P Y8b.     .d8""8b. 
+888        888 888 888  888  888 8888888P"   "Y8888  888  888 
+                                                              
+                                                              
+                                                              
+                                                              
