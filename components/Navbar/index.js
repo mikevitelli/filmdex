@@ -2,29 +2,34 @@ import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 
 const Links = () => {
-  let pages = [];
-  pages = [
-    { href: "/dashboard", title: "dash" },
-    { href: "/bookmarks", title: "bookmarks" },
-    { href: "/", title: "home" },
-  ];
+
   return <>
-    <div className="mr-4 text-center lg:text-left">
-      <Link href="/">
-        home
-      </Link>{" "}
-      /{" "}
-      <Link href="/auth/films">
-        films
-      </Link>{" "}
-      /{" "}
-      <Link href="/auth/bookmarks">
-        bookmarks
-      </Link>{" "}
-      /{" "}
-      <Link href="/auth/logs">
-        logs
-      </Link>
+    <div className="mr-4 text-center lg:text-center">
+      <button className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded-full shadow mx-5">
+        <Link href="/">
+          home
+        </Link>
+      </button>
+
+
+      <button className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded-full shadow mx-5">
+        <Link href="/auth/films">
+          films
+        </Link>
+      </button>
+
+      <button className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded-full shadow mx-5">
+        <Link href="/auth/bookmarks">
+          saved
+        </Link>
+      </button>
+
+      <button className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded-full shadow mx-5">
+        <Link href="/auth/logs">
+          logs
+        </Link>
+      </button>
+
     </div>
   </>;
 };

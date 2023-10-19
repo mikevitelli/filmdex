@@ -33,7 +33,6 @@ export default function Home() {
         <>
           <Layout>
             <div className="container mx-auto">
-              <p className="text-center text-5xl mb-10">home</p>
 
               <div className="flex justify-center">
                 <Image

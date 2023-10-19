@@ -10,11 +10,8 @@ const Bookmarks = () => {
         <>
           <Layout>
             <div className="container mx-auto">
-              <p className="text-center text-5xl mb-10">bookmarks</p>{" "}
+              <p className="text-center text-5xl mb-10">❤️</p>{" "}
             </div>{" "}
-
-
-            
           </Layout>
         </>
       )
