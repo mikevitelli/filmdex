@@ -19,7 +19,7 @@ const Links = () => {
       </button>
 
       <button className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded-full shadow mx-5">
-        <Link href="/auth/bookmarks">
+        <Link href="/auth/saved">
           saved
         </Link>
       </button>

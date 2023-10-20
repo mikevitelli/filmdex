@@ -4,16 +4,10 @@ import PropTypes from "prop-types";
 import Head from "next/head";
 import { SessionProvider } from "next-auth/react";
 import "tailwindcss/tailwind.css";
+import Script from "next/script";
 
 export default function MyApp({ Component, pageProps }) {
-  // material u
-  // React.useEffect(() => {
-  //   // Remove the server-side injected CSS.
-  //   const jssStyles = document.querySelector("#jss-server-side");
-  //   if (jssStyles) {
-  //     jssStyles.parentElement.removeChild(jssStyles);
-  //   }
-  // }, []);
+
 
   return (
     <>
@@ -37,18 +31,17 @@ export default function MyApp({ Component, pageProps }) {
         }}
         session={pageProps.session}
       >
-        <Head>
-          <script
+
+        <Component {...pageProps} />
+        <Script
             src="https://unpkg.com/react/umd/react.production.min.js"
             crossOrigin="true"
-          ></script>
+        ></Script>
 
-          <script
+        <Script
             src="https://unpkg.com/react-dom/umd/react-dom.production.min.js"
             crossOrigin="true"
-          ></script>
-        </Head>
-        <Component {...pageProps} />
+        ></Script>
       </SessionProvider>
     </>
   );

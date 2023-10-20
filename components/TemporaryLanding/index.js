@@ -1,4 +1,4 @@
-import { signIn, signOut, useSession } from "next-auth/react";
+import { signIn, signOut, signUp, useSession } from "next-auth/react";
 
 const Welcome = () => {
   const { data: session } = useSession();
@@ -23,6 +23,16 @@ const Welcome = () => {
           }}
         >
           Sign in
+        </button>
+        <button
+          className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow mx-5"
+          href={`/api/auth/signin`}
+          onClick={(e) => {
+            e.preventDefault();
+            signUp();
+          }}
+        >
+          Sign Up
         </button>
       </div>
     </>

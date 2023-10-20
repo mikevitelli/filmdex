@@ -10,8 +10,10 @@ const Account = () => {
       <>
       <Layout>
         <div className="container mx-auto">
-          <p className="text-center text-5xl mb-10">Account Settings</p>{" "}
-        </div>{" "}
+          <p className="text-center text-5xl mb-10">Account Settings</p>
+          <p className="text-center text-xl mb-10">username: {session.user.name}</p>
+          <p className="text-center text-xl mb-10">email: {session.user.email}</p>
+        </div>
       </Layout>
     </>
     )

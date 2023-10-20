@@ -33,7 +33,6 @@ export default function Home() {
         <>
           <Layout>
             <div className="container mx-auto">
-
               <div className="flex justify-center">
                 <Image
                   src="/film_guy512.png"

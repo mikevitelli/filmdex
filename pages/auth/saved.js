@@ -2,7 +2,7 @@ import { useSession } from "next-auth/react";
 import Layout from "../../components/Layout";
 import Welcome from "../../components/TemporaryLanding";
 
-const Bookmarks = () => {
+const Saved = () => {
   const { data: session, status } = useSession()
   
     if (status === 'authenticated'){
@@ -10,8 +10,10 @@ const Bookmarks = () => {
         <>
           <Layout>
             <div className="container mx-auto">
-              <p className="text-center text-5xl mb-10">❤️</p>{" "}
-            </div>{" "}
+              <p className="text-center text-5xl mb-10">
+                ❤️
+              </p>
+            </div>
           </Layout>
         </>
       )
@@ -31,4 +33,4 @@ export async function getStaticProps(ctx) {
   };
 }
 
-export default Bookmarks;
+export default Saved;
