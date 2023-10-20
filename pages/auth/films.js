@@ -19,22 +19,22 @@ export async function getStaticProps() {
 }
 
 const FilmsPage = (props) => {
-  const { data: session, status } = useSession()
+  const { data: session, status } = useSession();
 
-  if (status === 'authenticated'){
-    return(
+  if (status === "authenticated") {
+    return (
       <>
         <Layout>
           <Films {...props} />
         </Layout>
       </>
-    )
+    );
   }
-  return(
+  return (
     <>
-    <Welcome />
-  </>
-  )
-}
+      <Welcome />
+    </>
+  );
+};
 
 export default FilmsPage;

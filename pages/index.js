@@ -21,10 +21,10 @@ export default function Home() {
           crossOrigin="true"
         ></Script>
 
-        <Script
+        {/* <Script
           src="https://unpkg.com/react-dom/umd/react-dom.production.min.js"
           crossOrigin="true"
-        ></Script>
+        ></Script> */}
       </Head>
 
       {!session && <Welcome />}

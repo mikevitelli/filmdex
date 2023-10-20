@@ -7,8 +7,6 @@ import "tailwindcss/tailwind.css";
 import Script from "next/script";
 
 export default function MyApp({ Component, pageProps }) {
-
-
   return (
     <>
       <SessionProvider
@@ -31,17 +29,16 @@ export default function MyApp({ Component, pageProps }) {
         }}
         session={pageProps.session}
       >
-
         <Component {...pageProps} />
         <Script
-            src="https://unpkg.com/react/umd/react.production.min.js"
-            crossOrigin="true"
+          src="https://unpkg.com/react/umd/react.production.min.js"
+          crossOrigin="true"
         ></Script>
 
-        <Script
+        {/* <Script
             src="https://unpkg.com/react-dom/umd/react-dom.production.min.js"
             crossOrigin="true"
-        ></Script>
+        ></Script> */}
       </SessionProvider>
     </>
   );

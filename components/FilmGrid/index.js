@@ -3,18 +3,6 @@ import React from "react";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 
-// const useStyles = makeStyles((theme) => ({
-//   root: {
-//     flexGrow: 1,
-//     margin: 100,
-//   },
-//   paper: {
-//     padding: theme.spacing(6),
-//     textAlign: "center",
-//     color: theme.palette.text.primary,
-//   },
-// }));
-
 const FilmGrid = () => {
   const classes = useStyles();
 

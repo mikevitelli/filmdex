@@ -2,7 +2,6 @@ import SaveButton from "../SaveFilm";
 import ViewButton from "../ViewFilm";
 
 const Films = ({ films }) => {
-
   return (
     <div className="container mx-auto">
       <div className="text-5xl mt-5 text-center">
@@ -22,8 +21,8 @@ const Films = ({ films }) => {
                   {film.description.substring(0, 140) + "..."}
                 </div>
                 <div className="grid grid-cols-2 space-x-6">
-                  <SaveButton props={film}/>
-                  <ViewButton props={film}/>
+                  <SaveButton props={film} />
+                  <ViewButton props={film} />
                 </div>
               </div>
             </div>
@@ -33,6 +32,5 @@ const Films = ({ films }) => {
     </div>
   );
 };
-
 
 export default Films;
