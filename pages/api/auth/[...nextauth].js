@@ -24,7 +24,7 @@ export default NextAuth({
         const { name, email } = user;
 
         try {
-          // check to see if user exists
+          // check to see if user exists?
           await connectMongoDB();
 
           const userExists = await User.findOne({ email });
